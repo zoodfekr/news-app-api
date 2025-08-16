@@ -5,6 +5,7 @@ import cors from "cors";
 import "dotenv/config";
 
 import router from "./routes/selectors_routes.js";
+import ai_router from "./routes/ai.js";
 
 const app = express();
 const PORT = 3000;
@@ -17,6 +18,7 @@ app.get("/", (req, res) => res.status(200).json({ message: "app is running" }));
 
 // routes
 app.use("/api", router);
+app.use("/api", ai_router);
 
 // end routes
 
