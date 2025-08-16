@@ -10,5 +10,6 @@ export const ai_chat = async (value) => {
       stream: false,
     }),
   });
-  return res.response;
+  const data = await res.json();
+  return data.response;
 };

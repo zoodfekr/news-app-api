@@ -17,12 +17,16 @@ export const getAi = async (req, res) => {
     const data_summary = await response_summary.json();
 
     const values = {
+
       title: translatedText.text,
       summary: translatedSummary.text,
-      title_en: title,
-      summary_en: summary,
+
       ai_title: data_title,
       ai_summary: data_summary,
+
+      title_en: title,
+      summary_en: summary,
+      
       link: link,
       site: site,
     };

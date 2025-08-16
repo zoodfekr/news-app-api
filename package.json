@@ -21,6 +21,7 @@
     "express": "^5.1.0",
     "google-translate-api-x": "^10.7.2",
     "mongoose": "^8.17.1",
+    "morgan": "^1.10.1",
     "nodemon": "^3.1.10"
   }
 }
