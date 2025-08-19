@@ -17,18 +17,18 @@ export const createSelector = async (req, res) => {
   try {
     await sourceValidationSchema.validate(req.body, { abortEarly: false });
 
-    // ai section
+    //? ai section
 //     const prompt = `You are given a JSON object. Your task is to clean the values of all CSS selector fields. 
 // Specifically, if a selector value ends with ":nth-of-type(x)" (for any number x), remove that part from the string. 
 // Do not change anything else in the JSON. 
 // Return the cleaned JSON in the exact same structure and format, without adding explanations or extra fields.`;
 
-const prompt = 'مقادیر :nth-of-type(x) را از این دیتا پاک کنی و بعد ان را برگشت بدی وظیفه تو این است که '
+const prompt = 'مقادیر :nth-of-type(number) را از این دیتا پاک کنی و بعد ان را برگشت بدی وظیفه تو این است که '
 
     const response_ai = await ai_chat(`${prompt} : ${JSON.stringify(req.body)}`);
 
     console.log("ai respone ---- >", response_ai);
-    // end ai sectin
+    //? end ai sectin
 
     const exist_selector = await selectors_model.findOne({
       name: req.body.name,
@@ -55,3 +55,6 @@ const prompt = 'مقادیر :nth-of-type(x) را از این دیتا پاک ک
     res.status(500).json({ message: "Error creating selector" });
   }
 };
+
+
+
