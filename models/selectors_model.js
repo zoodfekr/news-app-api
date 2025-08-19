@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const selectorSchema = new mongoose.Schema({
   name: { type: String, required: true },
   url: { type: String, required: true },
+  container_selector: { type: String, required: true },
   title_selector: { type: String, required: true },
   summary_selector: { type: String, required: false, default: "" },
   link_selector: { type: String, required: true },
@@ -22,4 +23,4 @@ const selectorSchema = new mongoose.Schema({
   date: { type: Date, required: false, default: Date.now },
 });
 
-export const selectors_model = mongoose.model("test", selectorSchema);
+export const selectors_model = mongoose.model("extension_selectors", selectorSchema);
